@@ -237,7 +237,7 @@ DESCRIPTION OF ALL OPTIONS
     -logistic_priority_score        value of score metric below which MIPs are placed nonlinearly to
                                     optimize score and SNPs are tolerated
                                     default is 0.9,lower values enable more efficient linear tiling
-    -svr_priotity_score             analogous to logistic_priority_score
+    -svr_priority_score             analogous to logistic_priority_score
                                     default is 1.5 for SVR
     Miscellaneous:
 
