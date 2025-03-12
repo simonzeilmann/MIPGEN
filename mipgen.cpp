@@ -152,7 +152,7 @@ mipgen(int argc, char * argv[]) {
 	if(args["-trf"] != "off")
 	{
 		a = system(args["-trf"].c_str());
-		if (a != 65280)
+		if (a != 1)
 		{
 			cerr << "TRF directory invalid" << endl;
 			throw 3;
@@ -1403,7 +1403,7 @@ Scoring parameters:\n\
 -logistic_priority_score        value of score metric below which MIPs are placed nonlinearly to\n\
                                 optimize score and SNPs are tolerated\n\
                                 default is 0.9,lower values enable more efficient linear tiling\n\
--svr_priotity_score             analogous to logistic_priority_score\n\
+-svr_priority_score             analogous to logistic_priority_score\n\
                                 default is 1.5 for SVR\n\
 Miscellaneous:\n\
 \n\
