@@ -151,12 +151,26 @@ mipgen(int argc, char * argv[]) {
 	}
 	if(args["-trf"] != "off")
 	{
-		a = system(args["-trf"].c_str());
-		if (a != 1)
-		{
-			cerr << "TRF directory invalid" << endl;
-			throw 3;
-		}
+    		FILE* pipe = popen("which trf", "r");
+    		if (!pipe)
+    		{
+        		cerr << "TRF executable check failed" << endl;
+        		throw 3;
+   		}
+    		char buffer[128];
+    		std::string result;
+    		while (fgets(buffer, sizeof(buffer), pipe) != NULL)
+    		{
+        		result += buffer;
+    		}
+    		pclose(pipe);
+    		// Remove any trailing whitespace/newlines
+    		boost::trim(result);
+    		if(result != "/usr/bin/trf")
+    		{
+        		cerr << "TRF directory invalid" << endl;
+        		throw 3;
+    		}
 	}
 	parse_arg_values();	
 }
