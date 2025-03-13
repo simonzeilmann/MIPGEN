@@ -26,7 +26,7 @@ color = {
     'orange': '255,69,0',
     'pink': '255,105,180',
     'brown': '139,69,19',
-    'snow': '205,203,20'
+    'snow': '205,203,200'
 }
 available_colors = list(color.keys())
 
